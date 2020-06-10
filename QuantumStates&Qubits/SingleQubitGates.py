@@ -1,6 +1,7 @@
 from qiskit import *
 from qiskit.visualization import plot_bloch_multivector
 import matplotlib.pyplot as plt
+
 from math import  pi
 #gates = operations that changes qubits!
 
@@ -17,4 +18,16 @@ plt.show()
 backend = Aer.get_backend('statevector_simulator')
 res= execute(quantum_circuit, backend).result().get_statevector()
 plot_bloch_multivector(res)
+plt.show()
+
+# Pauli Y and Z gates ==> rotations about the y and z axes!!
+quantum_circuit.y(0)
+quantum_circuit.z(0)
+plt.show()
+
+#  but these gates operate very similar to classical bits ==> want to instead use superposition!!
+#  use Hadamard gate instead!
+#  superposition of |0> and |1> ==> hadamard gate
+quantum_circuit.h(0)
+quantum_circuit.draw('mpl')
 plt.show()
