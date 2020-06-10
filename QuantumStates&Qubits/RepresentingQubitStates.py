@@ -59,3 +59,15 @@ quantum_circuit.initialize(initial_state, 0)
 res = execute(quantum_circuit, simulator).result().get_counts()
 plot_histogram(res)
 plt.show()
+
+
+# rules of measurement: can apply a rule to obtain the measurement
+# implication of this rule: needs to be normalized!! ==> probabilities should add up to 1
+# probabilities shoudl add to 1 ==> magnitude of statevector should be 1
+# if vector is NOT normalized and we call initialized on it, error will be thrown!
+
+
+
+# INTERESTING PROPERTY: the act of measuring does change the state of our qubits!!!
+# this is equivalent to collapsing the state of the qubit
+# so measurements should ONLY be used when we want to extract the output!!!
